@@ -15,6 +15,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad-retina-152x152.png">
     </head>
     <body>
+<<<<<<< HEAD
         <!-- Canvas placeholder -->
         <div id="screen"></div>
 
@@ -77,5 +78,10 @@
                 }
             });
         </script>
+=======
+        <?php
+        // HOTTU D OGU
+        ?>
+>>>>>>> c1b5162bf726d3d9d51e3a71a17ad58397aaa746
     </body>
 </html>
