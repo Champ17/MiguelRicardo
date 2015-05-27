@@ -21,7 +21,7 @@
    </properties>
   </tile>
  </tileset>
- <imagelayer name="space" x="-373" y="-463">
+ <imagelayer name="space" x="-373" y="-463" visible="0">
   <image source="../img/space.jpg"/>
  </imagelayer>
  <layer name="background1" width="32" height="9" opacity="0.93">

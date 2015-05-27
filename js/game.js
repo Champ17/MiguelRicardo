@@ -4,7 +4,12 @@ var game = {
     // an object where to store game information
     data: {
         // score
-        score: 0
+        score: 0,
+        playerHealth: 10,
+        playerMoveSpeed: 5,
+        playerAttack: 1,
+        playerAttackTimer: 1000,
+        player: ""
    },
     // Run on page load.
     "onload": function() {
