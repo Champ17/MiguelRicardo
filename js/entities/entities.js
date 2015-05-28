@@ -36,7 +36,7 @@ game.PlayerPac = me.Entity.extend({
         this.health = game.data.playerHealth;
         this.body.setVelocity(game.data.playerMoveSpeed, 20);
         this.attack = game.data.playerAttack;
-        this.body.gravity = 0;
+        //this.body.gravity = 0;
     },
     setFlags: function() {
         this.facing = "right";
