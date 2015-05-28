@@ -1,5 +1,5 @@
 <?php 
-
+require_once(__DIR__ . "/php/controller/create-db.php");
 ?>
 <html>
     <head>
@@ -80,6 +80,74 @@
                         window.scrollTo(0, 1);
                     });
                 }
+            });
+        </script>
+        
+        <script>
+                    $("#mainmenu").bind("click", function() {
+                me.state.change(me.state.MENU);
+            });
+            //sends user to main menu when clicked
+            $("#load").bind("click", function() {
+                $.ajax({
+                    type: "POST",
+                    url: "php/controller/login-user.php",
+                    //sends to create-user
+                    data: {
+                        username: $('#username').val(),
+                        //looks at username ID value and passes it in as variable which calls username
+                        password: $('#password').val()
+                                //looks at password ID value and passes it in as variable which calls password
+                    },
+                    dataType: "text"
+                })
+                        .success(function(response) {
+                            if (response === "Invalid username/password") {
+                                alert(response);
+                            } else {
+                                //alert(response);
+                                var data = jQuery.parseJSON(response);
+                                game.data.exp = data["exp"];
+                                game.data.exp1 = data["exp1"];
+                                game.data.exp2 = data["exp2"];
+                                game.data.exp3 = data["exp3"];
+                                game.data.exp4 = data["exp4"];
+                                
+                                
+                            me.state.change(me.state.SPENDEXP);
+                            }
+                        })
+                        //begins game if code above succeeds
+                        .fail(function(response) {
+                            alert("FAIL");
+                        });
+                //runs if code above fails
+            });
+            $("#register").bind("click", function() {
+                $.ajax({
+                    type: "POST",
+                    url: "php/controller/create-user.php",
+                    //sends to create-user
+                    data: {
+                        username: $('#username').val(),
+                        //looks at username ID value and passes it in as variable which calls username
+                        password: $('#password').val()
+                                //looks at password ID value and passes it in as variable which calls password
+                    },
+                    dataType: "text"
+                })
+                        .success(function(response) {
+                            if (response === true) {
+                                me.state.change(me.state.PLAY);
+                            } else {
+                                alert(response);
+                            }
+                        })
+                        //begins game if code above succeeds
+                        .fail(function(response) {
+                            alert("FAIL");
+                        });
+                //runs if code above fails
             });
         </script>
     </body>
