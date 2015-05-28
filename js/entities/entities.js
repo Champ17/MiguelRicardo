@@ -34,9 +34,9 @@ game.PlayerPac = me.Entity.extend({
     },
     setAttributes: function() {
         this.health = game.data.playerHealth;
-        this.body.setVelocity(game.data.playerMoveSpeed, 20);
+        this.body.setVelocity(game.data.playerMoveSpeed, game.data.playerMoveSpeed);
         this.attack = game.data.playerAttack;
-        //this.body.gravity = 0;
+        this.body.gravity = 0;
     },
     setFlags: function() {
         this.facing = "right";
@@ -73,6 +73,10 @@ game.PlayerPac = me.Entity.extend({
             this.moveLeft();
         } else {
             this.body.vel.x = 0;
+        } if (me.input.isKeyPressed('Up')) {
+           this.moveUp();
+        }else if (me.input.isKeyPressed('Down')) {
+           this.moveDown();
         }
     },
     moveRight: function() {
@@ -88,6 +92,16 @@ game.PlayerPac = me.Entity.extend({
         this.body.vel.x -= this.body.accel.x * me.timer.tick;
         this.facing = "left";
     },
+      moveUp : function(){
+                // set current vel to the maximum defined value
+                // gravity will then do the rest
+                this.body.vel.y -= this.body.maxVel.y * me.timer.tick;
+              
+            
+        },
+       moveDown : function(){
+                this.body.vel.y += this.body.maxVel.y * me.timer.tick; 
+        },
     setAnimation: function() {
         if (this.attacking) {
             if (!this.renderable.isCurrentAnimation("attack")) {

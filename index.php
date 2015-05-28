@@ -55,6 +55,8 @@ require_once(__DIR__ . "/php/controller/create-db.php");
 
         <script type="text/javascript" src="js/screens/title.js"></script>
         <script type="text/javascript" src="js/screens/play.js"></script>
+        <script src="js/screens/loadProfile.js" type="text/javascript"></script>
+        <script src="js/screens/newProfile.js" type="text/javascript"></script>
         <!-- /build -->
         <!-- Bootstrap & Mobile optimization tricks -->
         <script type="text/javascript">
@@ -114,7 +116,7 @@ require_once(__DIR__ . "/php/controller/create-db.php");
                                 game.data.exp4 = data["exp4"];
                                 
                                 
-                            me.state.change(me.state.SPENDEXP);
+                            me.state.change(me.state.PLAY);
                             }
                         })
                         //begins game if code above succeeds
@@ -137,7 +139,7 @@ require_once(__DIR__ . "/php/controller/create-db.php");
                     dataType: "text"
                 })
                         .success(function(response) {
-                            if (response === true) {
+                            if (response === "true") {
                                 me.state.change(me.state.PLAY);
                             } else {
                                 alert(response);

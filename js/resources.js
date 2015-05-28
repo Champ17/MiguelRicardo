@@ -8,6 +8,8 @@ game.resources = [
     {name: "background-tiles", type: "image", src: "data/img/background-tiles.png"},
     {name: "space", type: "image", src: "data/img/space.jpg"},
     {name: "meta-tiles", type: "image", src: "data/img/meta-tiles.png"},
+    {name: "new-screen", type:"image", src: "data/img/new.jpg"},
+    {name: "load-screen", type:"image", src: "data/img/load.jpg"}, 
     /* Atlases 
      * @example
      * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
