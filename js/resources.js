@@ -8,6 +8,8 @@ game.resources = [
     {name: "background-tiles", type: "image", src: "data/img/background-tiles.png"},
     {name: "space", type: "image", src: "data/img/space.jpg"},
     {name: "meta-tiles", type: "image", src: "data/img/meta-tiles.png"},
+    {name: "pacmeta-tiles", type: "image", src: "data/img/pacmeta-tiles.png"},
+    {name: "PacmanTileset", type: "image", src: "data/img/PacmanTileset.png"},
     {name: "new-screen", type:"image", src: "data/img/new.jpg"},
     {name: "load-screen", type:"image", src: "data/img/load.jpg"}, 
     /* Atlases 
