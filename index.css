@@ -45,3 +45,9 @@ body {
  #register{
     visibility: hidden;
 }
+body{
+    background-image: url("http://images.forwallpaper.com/files/thumbs/preview/9/93740__mix-color-background_p.jpg");
+    background-size: cover;
+}
+
+

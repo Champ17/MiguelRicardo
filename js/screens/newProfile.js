@@ -5,6 +5,7 @@ game.NewProfile = me.ScreenObject.extend({
     onResetEvent: function() {
         me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('new-screen')), -10); // TODO
         //puts new screen in when gme starts
+        me.audio.playTrack("Park");
         
         document.getElementById("input").style.visibility = "visible";
         document.getElementById("register").style.visibility = "visible";
@@ -47,6 +48,7 @@ game.NewProfile = me.ScreenObject.extend({
      *  action to perform when leaving this screen (state change)
      */
     onDestroyEvent: function() {
+        me.audio.stopTrack();
         document.getElementById("input").style.visibility = "hidden";
         document.getElementById("register").style.visibility = "hidden";
         //hides input and load
